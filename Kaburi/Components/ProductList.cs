@@ -17,6 +17,9 @@ namespace Kaburi.Components
             Items.CollectionChanged += Items_CollectionChanged;
         }
 
+        public Color BorderColor { get => roundedPanel1.BorderColor; set => roundedPanel1.BorderColor = value; }
+        public int BorderWidth { get => roundedPanel1.BorderWidth; set => roundedPanel1.BorderWidth = value; }
+
         private void Items_CollectionChanged(object? sender, 
             System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {

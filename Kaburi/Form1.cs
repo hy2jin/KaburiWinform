@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using Kaburi.Components.Picks;
+
 namespace Kaburi
 {
     public partial class Form1 : Form
@@ -8,6 +11,11 @@ namespace Kaburi
         }
 
         private void productList1_ItemClicked(object sender, Kaburi.Models.Product e)
+        {
+            pickList.AddItem(e);
+        }
+
+        private void pickList_ItemValueChanged(List<PickItem> pickItems)
         {
 
         }

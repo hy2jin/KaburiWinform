@@ -45,10 +45,11 @@
             // 
             // flpnl
             // 
+            flpnl.AutoScroll = true;
             flpnl.Dock = DockStyle.Fill;
             flpnl.Location = new Point(20, 20);
             flpnl.Name = "flpnl";
-            flpnl.Size = new Size(504, 390);
+            flpnl.Size = new Size(400, 400);
             flpnl.TabIndex = 0;
             // 
             // ProductList

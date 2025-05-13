@@ -7,9 +7,9 @@ namespace Kaburi
             InitializeComponent();
         }
 
-        private void productCard1_Clicked(object sender, Kaburi.Components.Products.IProductCard e)
+        private void productList1_ItemClicked(object sender, Kaburi.Models.Product e)
         {
-            MessageBox.Show($"{e.Title}, {e.Price}");
+
         }
     }
 }

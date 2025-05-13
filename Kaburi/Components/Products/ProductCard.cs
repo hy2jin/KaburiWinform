@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kaburi.Models;
 
 namespace Kaburi.Components.Products
 {
@@ -18,6 +19,16 @@ namespace Kaburi.Components.Products
         public string Title { get; set; }
         public decimal Price { get; set; }
         public Image Image { get; set; }
+        public Product ToProduct()
+        {
+            return new Product
+            {
+                ID = ID,
+                Title = Title,
+                Price = Price,
+                Image = Image,
+            };
+        }
     }
 
     [DefaultEvent("Clicked")]
@@ -58,7 +69,7 @@ namespace Kaburi.Components.Products
 
         private void SetPrice()
         {
-            lblPrice.Text = $"{_price:0,000}원";
+            lblPrice.Text = $"{_price:#,000}원";
         }
     }
 }

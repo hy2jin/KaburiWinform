@@ -30,6 +30,10 @@
         {
             Models.Product product1 = new Models.Product();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            Models.Product product2 = new Models.Product();
+            Models.Product product3 = new Models.Product();
+            Models.Product product4 = new Models.Product();
+            Models.Product product5 = new Models.Product();
             headerControl1 = new Kaburi.Components.HeaderControl();
             productList1 = new Kaburi.Components.ProductList();
             SuspendLayout();
@@ -51,11 +55,32 @@
             product1.Image = (Image)resources.GetObject("product1.Image");
             product1.Price = new decimal(new int[] { 2000, 0, 0, 0 });
             product1.Title = "사과";
+            product2.ID = 2;
+            product2.Image = (Image)resources.GetObject("product2.Image");
+            product2.Price = new decimal(new int[] { 19000, 0, 0, 0 });
+            product2.Title = "치킨";
+            product3.ID = 3;
+            product3.Image = (Image)resources.GetObject("product3.Image");
+            product3.Price = new decimal(new int[] { 3000, 0, 0, 0 });
+            product3.Title = "쿠키";
+            product4.ID = 4;
+            product4.Image = (Image)resources.GetObject("product4.Image");
+            product4.Price = new decimal(new int[] { 4500, 0, 0, 0 });
+            product4.Title = "햄버거";
+            product5.ID = 5;
+            product5.Image = (Image)resources.GetObject("product5.Image");
+            product5.Price = new decimal(new int[] { 990, 0, 0, 0 });
+            product5.Title = "아이스크림";
             productList1.Items.Add(product1);
+            productList1.Items.Add(product2);
+            productList1.Items.Add(product3);
+            productList1.Items.Add(product4);
+            productList1.Items.Add(product5);
             productList1.Location = new Point(12, 118);
             productList1.Name = "productList1";
-            productList1.Size = new Size(635, 414);
+            productList1.Size = new Size(715, 422);
             productList1.TabIndex = 2;
+            productList1.ItemClicked += productList1_ItemClicked;
             // 
             // Form1
             // 

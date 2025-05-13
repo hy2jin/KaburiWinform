@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             roundedPanel1 = new RoundedPanel();
-            lblPrice = new Label();
-            lblTitle = new Label();
             picBox = new PictureBox();
+            lblTitle = new Label();
+            lblPrice = new Label();
             roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picBox).BeginInit();
             SuspendLayout();
@@ -47,8 +47,28 @@
             roundedPanel1.Location = new Point(0, 0);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Padding = new Padding(20);
-            roundedPanel1.Size = new Size(218, 150);
+            roundedPanel1.Size = new Size(150, 150);
             roundedPanel1.TabIndex = 0;
+            // 
+            // picBox
+            // 
+            picBox.Dock = DockStyle.Fill;
+            picBox.Location = new Point(20, 20);
+            picBox.Name = "picBox";
+            picBox.Size = new Size(110, 64);
+            picBox.SizeMode = PictureBoxSizeMode.Zoom;
+            picBox.TabIndex = 2;
+            picBox.TabStop = false;
+            // 
+            // lblTitle
+            // 
+            lblTitle.Dock = DockStyle.Bottom;
+            lblTitle.Location = new Point(20, 84);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(110, 23);
+            lblTitle.TabIndex = 1;
+            lblTitle.Text = "lblTitle";
+            lblTitle.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblPrice
             // 
@@ -57,30 +77,10 @@
             lblPrice.ForeColor = Color.Brown;
             lblPrice.Location = new Point(20, 107);
             lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(178, 23);
+            lblPrice.Size = new Size(110, 23);
             lblPrice.TabIndex = 0;
             lblPrice.Text = "lblPrice";
             lblPrice.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // lblTitle
-            // 
-            lblTitle.Dock = DockStyle.Bottom;
-            lblTitle.Location = new Point(20, 84);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(178, 23);
-            lblTitle.TabIndex = 1;
-            lblTitle.Text = "lblTitle";
-            lblTitle.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // picBox
-            // 
-            picBox.Dock = DockStyle.Fill;
-            picBox.Location = new Point(20, 20);
-            picBox.Name = "picBox";
-            picBox.Size = new Size(178, 64);
-            picBox.SizeMode = PictureBoxSizeMode.Zoom;
-            picBox.TabIndex = 2;
-            picBox.TabStop = false;
             // 
             // ProductCard
             // 
@@ -89,7 +89,6 @@
             BackColor = Color.Transparent;
             Controls.Add(roundedPanel1);
             Name = "ProductCard";
-            Size = new Size(218, 150);
             roundedPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picBox).EndInit();
             ResumeLayout(false);

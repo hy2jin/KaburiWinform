@@ -45,6 +45,7 @@ namespace Kaburi.Components.Picks
             
             _pickItems.Add(pickItem);
             flpnl.Controls.Add(pickItem);
+            RaiseItemValueChanged();
         }
 
         private void PickItem_CountChanged(object? sender, EventArgs e)
@@ -56,6 +57,18 @@ namespace Kaburi.Components.Picks
             PickItem pickItem = (PickItem)sender!;
             _pickItems.Remove(pickItem);
             flpnl.Controls.Remove(pickItem);
+            RaiseItemValueChanged();
+        }
+
+        internal List<PickItem> GetItems()
+        {
+            return _pickItems;
+        }
+
+        internal void Clear()
+        {
+            _pickItems.Clear();
+            flpnl.Controls.Clear();
             RaiseItemValueChanged();
         }
     }

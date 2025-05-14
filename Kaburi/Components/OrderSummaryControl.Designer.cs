@@ -31,9 +31,9 @@
             roundedPanel1 = new RoundedPanel();
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
-            label2 = new Label();
+            lblCount = new Label();
             label3 = new Label();
-            label4 = new Label();
+            lblTotalPrice = new Label();
             roundedPanel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -55,9 +55,9 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(label2, 1, 0);
+            tableLayoutPanel1.Controls.Add(lblCount, 1, 0);
             tableLayoutPanel1.Controls.Add(label3, 0, 1);
-            tableLayoutPanel1.Controls.Add(label4, 1, 1);
+            tableLayoutPanel1.Controls.Add(lblTotalPrice, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(20, 20);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -78,17 +78,17 @@
             label1.Text = "Count";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label2
+            // lblCount
             // 
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold);
-            label2.ForeColor = Color.DodgerBlue;
-            label2.Location = new Point(154, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(145, 129);
-            label2.TabIndex = 1;
-            label2.Text = "label2";
-            label2.TextAlign = ContentAlignment.MiddleRight;
+            lblCount.Dock = DockStyle.Fill;
+            lblCount.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold);
+            lblCount.ForeColor = Color.DodgerBlue;
+            lblCount.Location = new Point(154, 0);
+            lblCount.Name = "lblCount";
+            lblCount.Size = new Size(145, 129);
+            lblCount.TabIndex = 1;
+            lblCount.Text = "lblCount";
+            lblCount.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label3
             // 
@@ -101,17 +101,17 @@
             label3.Text = "TotalPrice";
             label3.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // label4
+            // lblTotalPrice
             // 
-            label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold);
-            label4.ForeColor = Color.DodgerBlue;
-            label4.Location = new Point(154, 129);
-            label4.Name = "label4";
-            label4.Size = new Size(145, 129);
-            label4.TabIndex = 3;
-            label4.Text = "label4";
-            label4.TextAlign = ContentAlignment.MiddleRight;
+            lblTotalPrice.Dock = DockStyle.Fill;
+            lblTotalPrice.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold);
+            lblTotalPrice.ForeColor = Color.DodgerBlue;
+            lblTotalPrice.Location = new Point(154, 129);
+            lblTotalPrice.Name = "lblTotalPrice";
+            lblTotalPrice.Size = new Size(145, 129);
+            lblTotalPrice.TabIndex = 3;
+            lblTotalPrice.Text = "lblTotalPrice";
+            lblTotalPrice.TextAlign = ContentAlignment.MiddleRight;
             // 
             // OrderSummaryControl
             // 
@@ -130,8 +130,8 @@
         private RoundedPanel roundedPanel1;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
-        private Label label2;
+        private Label lblCount;
         private Label label3;
-        private Label label4;
+        private Label lblTotalPrice;
     }
 }

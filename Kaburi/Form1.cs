@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using Kaburi.Components.Picks;
+using Kaburi.Dialogs;
 
 namespace Kaburi
 {
@@ -10,14 +9,14 @@ namespace Kaburi
             InitializeComponent();
         }
 
-        private void productList1_ItemClicked(object sender, Kaburi.Models.Product e)
+        private void btnPay_Click(object sender, EventArgs e)
         {
-            pickList.AddItem(e);
+            kioskEventHub1.Payment();
         }
 
-        private void pickList_ItemValueChanged(List<PickItem> pickItems)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            kioskEventHub1.Clear();
         }
     }
 }

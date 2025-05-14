@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Models.Product product1 = new Models.Product();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Models.Product product2 = new Models.Product();
@@ -37,6 +38,11 @@
             headerControl1 = new Kaburi.Components.HeaderControl();
             productList1 = new Kaburi.Components.ProductList();
             pickList = new Kaburi.Components.Picks.PickList();
+            orderSummaryControl1 = new Kaburi.Components.OrderSummaryControl();
+            btnPay = new Kaburi.Components.RoundedButton();
+            btnCancel = new Kaburi.Components.RoundedButton();
+            countDownTimer1 = new Kaburi.Components.CountDownTimer(components);
+            kioskEventHub1 = new Kaburi.Components.KioskEventHub(components);
             SuspendLayout();
             // 
             // headerControl1
@@ -45,7 +51,7 @@
             headerControl1.Dock = DockStyle.Top;
             headerControl1.Location = new Point(0, 0);
             headerControl1.Name = "headerControl1";
-            headerControl1.Size = new Size(892, 150);
+            headerControl1.Size = new Size(892, 112);
             headerControl1.TabIndex = 0;
             headerControl1.Title = "까불이 음식점에 오신 것을 환영합니다!";
             // 
@@ -83,7 +89,6 @@
             productList1.Name = "productList1";
             productList1.Size = new Size(868, 355);
             productList1.TabIndex = 2;
-            productList1.ItemClicked += productList1_ItemClicked;
             // 
             // pickList
             // 
@@ -93,7 +98,57 @@
             pickList.Name = "pickList";
             pickList.Size = new Size(569, 284);
             pickList.TabIndex = 3;
-            pickList.ItemValueChanged += pickList_ItemValueChanged;
+            // 
+            // orderSummaryControl1
+            // 
+            orderSummaryControl1.BorderColor = Color.DodgerBlue;
+            orderSummaryControl1.BorderWidth = 1;
+            orderSummaryControl1.Count = 0;
+            orderSummaryControl1.Location = new Point(587, 479);
+            orderSummaryControl1.Name = "orderSummaryControl1";
+            orderSummaryControl1.Size = new Size(293, 205);
+            orderSummaryControl1.TabIndex = 4;
+            orderSummaryControl1.TotalPrice = new decimal(new int[] { 0, 0, 0, 0 });
+            // 
+            // btnPay
+            // 
+            btnPay.BackColor = Color.DodgerBlue;
+            btnPay.BorderColor = Color.DodgerBlue;
+            btnPay.BorderWidth = 2;
+            btnPay.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnPay.ForeColor = Color.White;
+            btnPay.Location = new Point(739, 690);
+            btnPay.Name = "btnPay";
+            btnPay.Size = new Size(141, 73);
+            btnPay.TabIndex = 5;
+            btnPay.Text = "결제하기";
+            btnPay.Click += btnPay_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.Salmon;
+            btnCancel.BorderColor = Color.Salmon;
+            btnCancel.BorderWidth = 2;
+            btnCancel.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnCancel.ForeColor = Color.White;
+            btnCancel.Location = new Point(587, 690);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(141, 73);
+            btnCancel.TabIndex = 6;
+            btnCancel.Text = "취소하기";
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // countDownTimer1
+            // 
+            countDownTimer1.WaitSeconds = 5;
+            // 
+            // kioskEventHub1
+            // 
+            kioskEventHub1.CountDownTimer = countDownTimer1;
+            kioskEventHub1.OrderSummaryControl = orderSummaryControl1;
+            kioskEventHub1.ParentForm = this;
+            kioskEventHub1.PickList = pickList;
+            kioskEventHub1.ProductList = productList1;
             // 
             // Form1
             // 
@@ -101,11 +156,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(892, 775);
+            Controls.Add(btnCancel);
+            Controls.Add(btnPay);
+            Controls.Add(orderSummaryControl1);
             Controls.Add(pickList);
             Controls.Add(productList1);
             Controls.Add(headerControl1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "까불이네 키오스크";
             ResumeLayout(false);
         }
 
@@ -114,5 +172,10 @@
         private Components.HeaderControl headerControl1;
         private Components.ProductList productList1;
         private Components.Picks.PickList pickList;
+        private Components.OrderSummaryControl orderSummaryControl1;
+        private Components.RoundedButton btnPay;
+        private Components.RoundedButton btnCancel;
+        private Components.CountDownTimer countDownTimer1;
+        private Components.KioskEventHub kioskEventHub1;
     }
 }

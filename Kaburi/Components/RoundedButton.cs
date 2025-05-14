@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KaburiKiosk.Converters;
 
 namespace Kaburi.Components
 {
+    [TypeConverter(typeof(PropertyFilterConverter))]
     [DefaultEvent("Click")]
     public partial class RoundedButton: UserControl
     {
@@ -17,6 +19,9 @@ namespace Kaburi.Components
         public RoundedButton()
         {
             InitializeComponent();
+
+            PropertyFilterConverter.IncludedPropertyNames(this, ["BackColor", "BorderColor", "BorderWidth", "Font", "Text", "Size"]);
+
             base.BackColor = Color.Transparent;
             lblText.MouseEnter += LblText_MouseEnter;
             lblText.MouseLeave += LblText_MouseLeave;

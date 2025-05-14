@@ -64,5 +64,12 @@ namespace Kaburi.Components.Picks
         {
             return _pickItems;
         }
+
+        internal void Clear()
+        {
+            _pickItems.Clear();
+            flpnl.Controls.Clear();
+            RaiseItemValueChanged();
+        }
     }
 }

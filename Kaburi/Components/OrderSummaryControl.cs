@@ -7,10 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KaburiKiosk.Converters;
 
 namespace Kaburi.Components
 {
-    public partial class OrderSummaryControl: UserControl
+    public interface IOrderSummaryControl
+    {
+        int Count { get; set; }
+        decimal TotalPrice { get; set; }
+    }
+
+    [TypeConverter(typeof(PropertyFilterConverter))]
+    public partial class OrderSummaryControl: UserControl, IOrderSummaryControl
     {
         private int _count;
         private decimal _totalPrice;
@@ -26,6 +34,9 @@ namespace Kaburi.Components
         public OrderSummaryControl()
         {
             InitializeComponent();
+
+            PropertyFilterConverter.ExcludedPropertyNames(this, ["AutoSize", "AutoSizeMode"]);
+
             SetLblCount();
             SetLblTotalPrice();
         }

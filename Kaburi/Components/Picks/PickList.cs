@@ -45,6 +45,7 @@ namespace Kaburi.Components.Picks
             
             _pickItems.Add(pickItem);
             flpnl.Controls.Add(pickItem);
+            RaiseItemValueChanged();
         }
 
         private void PickItem_CountChanged(object? sender, EventArgs e)

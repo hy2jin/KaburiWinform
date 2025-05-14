@@ -1,6 +1,6 @@
 ﻿namespace Kaburi.Components
 {
-    partial class HeaderControl
+    partial class RoundedButton
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -28,46 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTitle = new Label();
-            lblDescription = new Label();
+            roundedPanel1 = new RoundedPanel();
+            lblText = new Label();
+            roundedPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // lblTitle
+            // roundedPanel1
             // 
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            lblTitle.Location = new Point(12, 12);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(82, 30);
-            lblTitle.TabIndex = 0;
-            lblTitle.Text = "lblTitle";
+            roundedPanel1.Controls.Add(lblText);
+            roundedPanel1.Dock = DockStyle.Fill;
+            roundedPanel1.Location = new Point(0, 0);
+            roundedPanel1.Name = "roundedPanel1";
+            roundedPanel1.Size = new Size(98, 44);
+            roundedPanel1.TabIndex = 0;
             // 
-            // lblDescription
+            // lblText
             // 
-            lblDescription.AutoSize = true;
-            lblDescription.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            lblDescription.ForeColor = SystemColors.GrayText;
-            lblDescription.Location = new Point(12, 53);
-            lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(112, 21);
-            lblDescription.TabIndex = 1;
-            lblDescription.Text = "lblDescription";
+            lblText.BackColor = Color.Transparent;
+            lblText.Cursor = Cursors.Hand;
+            lblText.Dock = DockStyle.Fill;
+            lblText.Location = new Point(0, 0);
+            lblText.Name = "lblText";
+            lblText.Size = new Size(98, 44);
+            lblText.TabIndex = 0;
+            lblText.Text = "lblText";
+            lblText.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // HeaderControl
+            // RoundedButton
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lblDescription);
-            Controls.Add(lblTitle);
-            Name = "HeaderControl";
-            Size = new Size(529, 88);
+            Controls.Add(roundedPanel1);
+            Name = "RoundedButton";
+            Size = new Size(98, 44);
+            roundedPanel1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label lblTitle;
-        private Label lblDescription;
+        private RoundedPanel roundedPanel1;
+        private Label lblText;
     }
 }

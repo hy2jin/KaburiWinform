@@ -59,5 +59,10 @@ namespace Kaburi.Components.Picks
             flpnl.Controls.Remove(pickItem);
             RaiseItemValueChanged();
         }
+
+        internal List<PickItem> GetItems()
+        {
+            return _pickItems;
+        }
     }
 }

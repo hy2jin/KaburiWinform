@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Kaburi.Components.Picks;
+using Kaburi.Dialogs;
 
 namespace Kaburi
 {
@@ -26,7 +27,7 @@ namespace Kaburi
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-
+            DialogBox.ShowReceiptDialog(this, pickList.GetItems());
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

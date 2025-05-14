@@ -34,18 +34,20 @@
             // 
             // txt
             // 
+            txt.Dock = DockStyle.Top;
             txt.Font = new Font("돋움체", 9F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            txt.Location = new Point(12, 12);
+            txt.Location = new Point(10, 10);
             txt.Multiline = true;
             txt.Name = "txt";
-            txt.Size = new Size(296, 382);
+            txt.Size = new Size(303, 382);
             txt.TabIndex = 0;
             // 
             // btnOk
             // 
-            btnOk.Location = new Point(12, 400);
+            btnOk.Dock = DockStyle.Bottom;
+            btnOk.Location = new Point(10, 402);
             btnOk.Name = "btnOk";
-            btnOk.Size = new Size(296, 38);
+            btnOk.Size = new Size(303, 38);
             btnOk.TabIndex = 1;
             btnOk.Text = "확인";
             btnOk.UseVisualStyleBackColor = true;
@@ -60,6 +62,7 @@
             Controls.Add(btnOk);
             Controls.Add(txt);
             Name = "ReceiptDialog";
+            Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterParent;
             Text = "영수증 상세내역";
             ResumeLayout(false);

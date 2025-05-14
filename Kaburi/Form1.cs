@@ -11,12 +11,12 @@ namespace Kaburi
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            DialogBox.ShowReceiptDialog(this, pickList.GetItems());
+            kioskEventHub1.Payment();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            pickList.Clear();
+            kioskEventHub1.Clear();
         }
     }
 }

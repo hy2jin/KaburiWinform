@@ -1,4 +1,5 @@
 ﻿using Kaburi.Components.Picks;
+using Kaburi.Dialogs;
 using Kaburi.Models;
 using System;
 using System.Collections.Generic;
@@ -72,5 +73,15 @@ namespace Kaburi.Components
         public PickList PickList { get; set; } = default!;
         public IOrderSummaryControl OrderSummaryControl { get; set; } = default!;
         public CountDownTimer CountDownTimer { get; set; } = default!;
+
+        public void Payment()
+        {
+            DialogBox.ShowReceiptDialog(ParentForm, PickList.GetItems());
+        }
+
+        public void Clear()
+        {
+            PickList.Clear();
+        }
     }
 }
